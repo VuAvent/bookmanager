@@ -17,8 +17,8 @@ public class UserDAO {
 			connection = ConnectionFactory.getConnection();
 			String sql = "INSERT INTO users (username, password, role)"
 						+" VALUES ('" 
-						+ username + "', '"
-						+ password + "', 'user')";
+						+ username + "', md5('"
+						+ password + "'), 'user')";
 			statement = connection.createStatement();
 			statement.executeUpdate(sql);
 		} catch (SQLException e) {
@@ -53,7 +53,7 @@ public class UserDAO {
 
 		try {
 			connection = ConnectionFactory.getConnection();
-			String sql = "SELECT * FROM users WHERE username='" + username + "' AND password = '" + password + "'";
+			String sql = "SELECT * FROM users WHERE username='" + username + "' AND password = md5('" + password + "')";
 			statement = connection.createStatement();
 			resultSet = statement.executeQuery(sql);
 
