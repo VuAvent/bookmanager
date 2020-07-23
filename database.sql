@@ -36,4 +36,4 @@ VALUES ('user', '123456','user'),
 ('admin', '123456','admin');
 
 insert into `users` (`username`, `password`, `role`)
-values ('minhvu',md5('minhvu'),'user');
+values ('admin1',md5('123456'),'admin');
