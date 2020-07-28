@@ -58,9 +58,7 @@
 
 		<!-- MENU SIDEBAR-->
 		<aside class="menu-sidebar d-none d-lg-block">
-			<div class="logo">
-				
-			</div>
+			<div class="logo"></div>
 			<div class="menu-sidebar__content js-scrollbar1">
 				<nav class="navbar-sidebar">
 					<ul class="list-unstyled navbar__list">
@@ -85,6 +83,11 @@
 							<h2 class="title-1">
 								<a href="">PRODUCTS</a>
 							</h2>
+							<form action="${pageContext.request.contextPath}/search"
+								method="post">
+								<input type="text" name="textSearch"> 
+								<input style="background: black; padding: 1px 5px; border-radius: 3px;color:orange" type="submit" value="search">
+							</form>
 							<button class="au-btn au-btn-icon au-btn--blue">
 								<a style="color: white"
 									href="${pageContext.request.contextPath}/insertBook">Add
